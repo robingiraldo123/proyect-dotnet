@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "VOFRKs8MXvS4uu3oNUtcic69Onn+ZsZrKo3JgXK6S3+jS45WVudbXy45+/6tU1ROgrZoqke7jpcq6nmsg/sYwg==",
+  "success": true,
+  "projectFilePath": "/media/ulises/SSD2/Development/github/dot_NET/crud-react/crud-react.csproj",
+  "expectedPackageFiles": [
+    "/home/ulises/.nuget/packages/microsoft.aspnetcore.spaservices.extensions/5.0.10/microsoft.aspnetcore.spaservices.extensions.5.0.10.nupkg.sha512",
+    "/home/ulises/.nuget/packages/microsoft.extensions.fileproviders.abstractions/5.0.0/microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "/home/ulises/.nuget/packages/microsoft.extensions.fileproviders.physical/5.0.0/microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
+    "/home/ulises/.nuget/packages/microsoft.extensions.filesystemglobbing/5.0.0/microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "/home/ulises/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

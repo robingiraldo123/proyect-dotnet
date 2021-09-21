@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/ulises/.dotnet/store/|arch|/|tfm|",
+      "/home/ulises/.nuget/packages"
+    ]
+  }
+}
