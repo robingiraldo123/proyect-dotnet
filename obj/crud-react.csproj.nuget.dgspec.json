@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/ulises/SSD2/Development/github/dot_NET/crud-react/crud-react.csproj": {}
+    "/home/ulises/github/proyect-dotnet/crud-react.csproj": {}
   },
   "projects": {
-    "/media/ulises/SSD2/Development/github/dot_NET/crud-react/crud-react.csproj": {
+    "/home/ulises/github/proyect-dotnet/crud-react.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ulises/SSD2/Development/github/dot_NET/crud-react/crud-react.csproj",
+        "projectUniqueName": "/home/ulises/github/proyect-dotnet/crud-react.csproj",
         "projectName": "crud-react",
-        "projectPath": "/media/ulises/SSD2/Development/github/dot_NET/crud-react/crud-react.csproj",
+        "projectPath": "/home/ulises/github/proyect-dotnet/crud-react.csproj",
         "packagesPath": "/home/ulises/.nuget/packages/",
-        "outputPath": "/media/ulises/SSD2/Development/github/dot_NET/crud-react/obj/",
+        "outputPath": "/home/ulises/github/proyect-dotnet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ulises/.nuget/NuGet/NuGet.Config"
@@ -39,6 +39,10 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.10, )"
             }
