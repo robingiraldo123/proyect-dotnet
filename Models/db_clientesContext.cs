@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Connection {
-  public class BdClientesContext {
+  public class BdClientesContext:DbContext {
+      public BdClientesContext(DbContextOptions<BdClientesContext> option):base(options)
 
   }
 }
