@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = crud_react
-build_property.ProjectDir = /media/ulises/SSD2/Development/github/dot_NET/crud-react/
+build_property.ProjectDir = /home/ulises/github/proyect-dotnet/
