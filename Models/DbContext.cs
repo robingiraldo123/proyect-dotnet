@@ -11,4 +11,13 @@ namespace crud_react.Models {
       public DbSet<DbCliente> DbClientes { get; set; }
 
   }
+
+
+
+  public class DbProductosContext:DbContext {
+      public DbProductosContext(DbContextOptions<DbProductosContext> options):base(options){}
+
+      public DbSet<DbProducto> DbProductos { get; set; }
+
+  }
 }
