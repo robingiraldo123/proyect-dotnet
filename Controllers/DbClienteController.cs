@@ -1,20 +1,26 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Microsift.AspNetCore.Http;
-using Microsift.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using DbConnection.Models;
+using crud_react.Models;
 
-namespace DbConnection.Models {
-    [Route("api/[controller]")]
+namespace crud_react.Controllers {
+
     [ApiController]
+    [Route("/api/[controller]")]
     public class DbClientesController: ControllerBase {
+
         private readonly DbClientesContext _context;
 
-        public BdClientesController(BdClientesContext context){
+
+
+
+        /**Constructor*/
+        public DbClientesController(DbClientesContext context){
             _context = context;
         }
 
@@ -22,7 +28,7 @@ namespace DbConnection.Models {
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DbCliente>>> GetCliente(){
+        public async Task<ActionResult<IEnumerable<DbCliente>>> GetClientes(){
             return await _context.DbClientes.ToListAsync();
         }
 
@@ -30,7 +36,7 @@ namespace DbConnection.Models {
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<DbCliente>> GetCliente(){
+        public async Task<ActionResult<DbCliente>> GetCliente(int id){
             var cliente = await _context.DbClientes.FindAsync(id);
 
             if(cliente == null){
@@ -78,7 +84,7 @@ namespace DbConnection.Models {
             _context.DbClientes.Add(cliente);
             await _context.SaveChangesAsync();
 
-            CreatedAtAction("GetCliente", new { id = cliente.id }, cliente);
+            return CreatedAtAction("GetCliente", new { id = cliente.id }, cliente);
         }
 
 
@@ -93,7 +99,7 @@ namespace DbConnection.Models {
             }
 
             _context.DbClientes.Remove(cliente);
-            await _context-SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return cliente;    
 

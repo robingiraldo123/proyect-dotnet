@@ -8,3 +8,15 @@ Requerimientos técnicos:
 - El código de subirse a un repositorio de código (github,gitlab, bitbucket, etc) donde se pueda
 clonar y se evidencie el avance de la implementación(Commits).
 - Documentar las Web APIS creadas con Swagger o alguna otra herramienta es un plus
+
+# Añadir a la base de datos
+
+    [POST]
+    /api/dbclientes
+
+    [BODY]: JSON
+    {
+        "name" : "Algún nombre",
+        "email": "Algún email",
+        "phone_number": "Algún número de teléfono"
+    }

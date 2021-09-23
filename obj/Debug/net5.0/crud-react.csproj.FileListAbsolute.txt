@@ -102,3 +102,5 @@
 /home/ulises/github/proyect-dotnet/obj/Debug/net5.0/crud-react.Views.pdb
 /home/ulises/github/proyect-dotnet/obj/Debug/net5.0/crud-react.csproj.CopyComplete
 /home/ulises/github/proyect-dotnet/obj/Debug/net5.0/crud-react.genruntimeconfig.cache
+/home/ulises/github/proyect-dotnet/bin/Debug/net5.0/package-lock.json
+/home/ulises/github/proyect-dotnet/bin/Debug/net5.0/package.json

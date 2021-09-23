@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-using DbConnection.Models;
+using crud_react.Models;
 
 namespace crud_react
 {
@@ -24,7 +24,8 @@ namespace crud_react
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllersWithViews();
+            services.AddControllers();
+            //services.AddControllersWithViews();
 
             services.AddDbContext<DbClientesContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("AzureConexion"))

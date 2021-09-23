@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace DbConnection.Models {
+namespace crud_react.Models {
   public class DbCliente {
       [Key]
       public int id { get; set; }
