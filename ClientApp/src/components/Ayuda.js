@@ -6,7 +6,7 @@ export class Ayuda extends Component {
   render () {
     return (
       <div>
-        <h1>Mi tienda</h1>
+        <h1>Cómo usar mi app:</h1>
         <p>Te damos la bienvenida a la aplicación de tu tienda:</p>
         <ul>
           <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
