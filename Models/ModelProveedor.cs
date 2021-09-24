@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 
 namespace crud_react.Models {
-    public class DbProvedor {
+    public class DbProveedor {
         [Key]
         public int id { get; set; }
   

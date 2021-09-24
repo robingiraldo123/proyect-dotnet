@@ -13,6 +13,7 @@ namespace crud_react.Models {
 
       public DbSet<DbCliente> DbClientes { get; set; }
       public DbSet<DbProducto> DbProductos { get; set; }
+      public DbSet<DbProveedor> DbProveedores { get; set; }
 
   }
 
