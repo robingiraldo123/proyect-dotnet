@@ -27,7 +27,7 @@ namespace crud_react
             services.AddControllers();
             //services.AddControllersWithViews();
 
-            services.AddDbContext<DbClientesContext>(options =>
+            services.AddDbContext<DbTiendaContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("AzureConexion"))
             );
 

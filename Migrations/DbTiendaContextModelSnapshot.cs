@@ -2,17 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using crud_react.Models;
 
 namespace crud_react.Migrations
 {
-    [DbContext(typeof(DbClientesContext))]
-    [Migration("20210922233432_InitialCreate")]
-    partial class InitialCreate
+    [DbContext(typeof(DbTiendaContext))]
+    partial class DbTiendaContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +37,31 @@ namespace crud_react.Migrations
                     b.HasKey("id");
 
                     b.ToTable("DbClientes");
+                });
+
+            modelBuilder.Entity("crud_react.Models.DbProducto", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("description")
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("stock")
+                        .HasColumnType("nvarchar(16)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("DbProductos");
                 });
 #pragma warning restore 612, 618
         }

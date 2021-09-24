@@ -14,13 +14,13 @@ namespace crud_react.Controllers {
     [Route("/api/[controller]")]
     public class DbClientesController: ControllerBase {
 
-        private readonly DbClientesContext _context;
+        private readonly DbTiendaContext _context;
 
 
 
 
         /**Constructor*/
-        public DbClientesController(DbClientesContext context){
+        public DbClientesController(DbTiendaContext context){
             _context = context;
         }
 
