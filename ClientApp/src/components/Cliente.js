@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from './Form'
 
 export class Cliente extends Component {
     static displayName = Cliente.name;
@@ -37,14 +38,17 @@ export class Cliente extends Component {
             </tr>
           </thead>
           <tbody>
-          {clientes.map(cliente =>
+            
+            <Form />
+          
+            {clientes.map(cliente =>
               <tr key={cliente.id}>
-              <td>{cliente.id}</td>   
-              <td>{cliente.name}</td>
-              <td>{cliente.email}</td>
-              <td>{cliente.phone_number}</td>
-              <td> Detalles </td>
-            </tr>
+                <td>{cliente.id}</td>   
+                <td>{cliente.name}</td>
+                <td>{cliente.email}</td>
+                <td>{cliente.phone_number}</td>
+                <td> Detalles </td>
+              </tr>
           )}
         </tbody>
         </table>);
