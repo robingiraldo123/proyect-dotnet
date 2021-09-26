@@ -34,20 +34,18 @@ export class Cliente extends Component {
               <th>Nombre</th>
               <th>Email</th>
               <th>Telefono</th>
-              <th>Detalles</th>          
+              <th>Descripción</th>          
             </tr>
           </thead>
           <tbody>
-            
             <Form />
-          
             {clientes.map(cliente =>
               <tr key={cliente.id}>
                 <td>{cliente.id}</td>   
                 <td>{cliente.name}</td>
                 <td>{cliente.email}</td>
                 <td>{cliente.phone_number}</td>
-                <td> Detalles </td>
+                <td>{cliente.description}</td>
               </tr>
           )}
         </tbody>

@@ -19,5 +19,8 @@ namespace crud_react.Models {
 
       [Column(TypeName = "nvarchar(16)")]
       public string phone_number { get; set; }
+
+      [Column(TypeName = "nvarchar(200)")]
+      public string description { get; set; }
   }
 }
