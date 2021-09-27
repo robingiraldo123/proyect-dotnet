@@ -17,39 +17,32 @@ export class Cliente extends Component {
     }
 
     handleDeleteAction = (e) => {
-      this.setState({
-        currentDeletingId: e.target.id
-      })
+      
 
-      console.log("id", this.state.currentDeletingId)
-      /*const body = {
-        id: e.target.id
+      console.log("id", e.target.id)
+      const body = {
+        "id": e.target.id
       };
-
-      console.log("click", body);
 
       const requestOptions = {
           method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
+          headers: { 'Content-Type': 'application/json' }
       };
 
-      fetch('/api/dbclientes', requestOptions)
-          .then(res=> res.json())
-          .then(
-            result => {
-              this.setState ({
-                isLoaded: true,
-                items: result.items
-              });
-          }
-      )*/
+      fetch('/api/dbclientes/' + e.target.id, requestOptions)
+      .then(response=>{
+         return response.json()
+      }).then(data=> {
+    
+        console.log(data)
+      });
+      
     }
 
     render(){
         let contents = this.state.loading
         ? <p><em>Loading...</em></p>
-        : Cliente.renderClient(this.state.clientes);
+        : Cliente.renderClient(this.state.clientes,this);
 
         return (
             <div>
@@ -59,7 +52,7 @@ export class Cliente extends Component {
         );
     }
 
-    static renderClient(clientes){
+    static renderClient(clientes,self){
 
         return (
         <table className='table table-striped' aria-labelledby="tabelLabel">
@@ -81,7 +74,7 @@ export class Cliente extends Component {
                 <td>{cliente.email}</td>
                 <td>{cliente.phone_number}</td>
                 <td>{cliente.description}</td>
-                <td><button id={cliente.id} onClick={this.handleDeleteAction}>Eliminar</button></td>
+                <td><button id={cliente.id} onClick={self.handleDeleteAction}>Eliminar</button></td>
               </tr>
           )}
         </tbody>
