@@ -5,12 +5,46 @@ export class Cliente extends Component {
     static displayName = Cliente.name;
     constructor(props) {
         super(props);
-        this.state = { clientes: [], loading: true };
+        this.state = { 
+          clientes: [],
+          loading: true,
+          currentDeletingId: ''
+        };
       }
 
     componentDidMount() {
-        this.populateClientData();
-      }
+      this.populateClientData();
+    }
+
+    handleDeleteAction = (e) => {
+      this.setState({
+        currentDeletingId: e.target.id
+      })
+
+      console.log("id", this.state.currentDeletingId)
+      /*const body = {
+        id: e.target.id
+      };
+
+      console.log("click", body);
+
+      const requestOptions = {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+      };
+
+      fetch('/api/dbclientes', requestOptions)
+          .then(res=> res.json())
+          .then(
+            result => {
+              this.setState ({
+                isLoaded: true,
+                items: result.items
+              });
+          }
+      )*/
+    }
 
     render(){
         let contents = this.state.loading
@@ -26,6 +60,7 @@ export class Cliente extends Component {
     }
 
     static renderClient(clientes){
+
         return (
         <table className='table table-striped' aria-labelledby="tabelLabel">
           <thead>
@@ -46,6 +81,7 @@ export class Cliente extends Component {
                 <td>{cliente.email}</td>
                 <td>{cliente.phone_number}</td>
                 <td>{cliente.description}</td>
+                <td><button id={cliente.id} onClick={this.handleDeleteAction}>Eliminar</button></td>
               </tr>
           )}
         </tbody>
