@@ -12,7 +12,7 @@ class Form extends Component {
         }
     }
 
-    handleSaveAction = e =>{
+    handleSaveAction = e => {
 
         const body = {
               name: this.state.name
@@ -31,12 +31,11 @@ class Form extends Component {
         fetch('/api/dbclientes', requestOptions)
             .then(res=> res.json())
             .then(
-
                 result => {
-                    this.setState ({
+                  this.setState ({
                     isLoaded: true,
                     items: result.items
-                    });
+                  });
                 }
             )
     }
@@ -59,7 +58,7 @@ class Form extends Component {
         })
     }
 
-    onChangeDetail = e=> {
+    onChangeDetail = e => {
         this.setState({
             detalles: e.target.value
         })
@@ -77,7 +76,6 @@ class Form extends Component {
             </tr>
         )
     }
-
 }
 
 export default Form
