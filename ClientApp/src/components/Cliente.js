@@ -5,7 +5,10 @@ export class Cliente extends Component {
     static displayName = Cliente.name;
     constructor(props) {
         super(props);
-        this.state = { clientes: [], loading: true };
+        this.state = {
+            clientes: [],
+            loading: true
+        };
       }
 
     componentDidMount() {
