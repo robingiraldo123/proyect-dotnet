@@ -14,7 +14,8 @@ export class Home extends Component {
           <li><a href='/#'>Proveedores</a></li>
           <li><a href='/#'>Facturas</a></li>
           <li><a href='/ayuda'>Ayuda</a></li>
-        </ul>
+            </ul>
+
         <h2>Actividad reciente:</h2>
         
      
