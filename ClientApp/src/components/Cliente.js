@@ -17,9 +17,6 @@ export class Cliente extends Component {
     }
 
     handleDeleteAction = (e) => {
-      
-
-      console.log("id", e.target.id)
       const body = {
         "id": e.target.id
       };
