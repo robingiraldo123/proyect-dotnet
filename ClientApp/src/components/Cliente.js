@@ -5,10 +5,16 @@ export class Cliente extends Component {
     static displayName = Cliente.name;
     constructor(props) {
         super(props);
+<<<<<<< HEAD
+        this.state = {
+            clientes: [],
+            loading: true
+=======
         this.state = { 
           clientes: [],
           loading: true,
           currentDeletingId: ''
+>>>>>>> 233a8439bb10a26156ee11265d0a567019658b60
         };
       }
 
