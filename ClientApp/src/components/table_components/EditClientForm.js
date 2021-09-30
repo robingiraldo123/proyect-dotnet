@@ -4,43 +4,45 @@ class EditClientForm extends Component {
   constructor(props) {
     super(props);
 
+    console.log(props);
+
     this.state = {
       id: props.id,
       name: props.name,
       email: props.email,
-      phone: props.phone_number,
-      detalles: props.description,
+      phone_number: props.phone_number,
+      description: props.description,
+      loading: false,
     };
 
     this.props = props;
   }
 
   handleSaveAction = (e) => {
-    const { updateid, name, email, phone, desc } = this.props;
+    this.setState({ loading: true });
+    const { id, name, email, phone_number, description } = this.state;
     const body = {
       name: name,
       email: email,
-      phone_number: phone,
-      description: desc,
+      phone_number: phone_number,
+      description: description,
     };
 
-    console.log("click", body);
+    this.props.makeRowStatic();
+    this.waitData(id, body);
+  };
 
+  waitData(id, body) {
     const requestOptions = {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     };
 
-    fetch("/api/dbclientes/" + updateid, requestOptions)
-      .then((res) => res.json())
-      .then((result) => {
-        this.setState({
-          isLoaded: true,
-          items: result.items,
-        });
-      });
-  };
+    fetch("/api/dbclientes/" + id, requestOptions);
+
+    this.setState({ loading: false });
+  }
 
   onChangeName = (e) => {
     this.setState({
@@ -62,12 +64,12 @@ class EditClientForm extends Component {
 
   onChangeDetail = (e) => {
     this.setState({
-      detalles: e.target.value,
+      description: e.target.value,
     });
   };
 
   render() {
-    return (
+    return this.state.loading === false ? (
       <tr>
         <td>
           <span>{this.state.id}</span>
@@ -90,22 +92,28 @@ class EditClientForm extends Component {
         </td>
         <td>
           <input
-            value={this.state.phone}
+            value={this.state.phone_number}
             onChange={this.onChangePhone}
-            type="number"
+            type="text"
             placeholder="teléfono"
           />
         </td>
         <td>
           <textarea
-            value={this.state.detalles}
+            value={this.state.description}
             onChange={this.onChangeDetail}
             placeholder="detalles"
           />
         </td>
         <td>
-          <button>Actualizar</button>
+          <button onClick={this.handleSaveAction}>Actualizar</button>
           <button onClick={this.props.makeRowStatic}>Cancelar</button>
+        </td>
+      </tr>
+    ) : (
+      <tr>
+        <td>
+          <h3>Actualizando...</h3>
         </td>
       </tr>
     );

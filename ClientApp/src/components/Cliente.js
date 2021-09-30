@@ -48,7 +48,7 @@ export class Cliente extends Component {
         <tbody>
           <NewClientForm />
           {clientes.map((cliente) => (
-            <TableRow key={cliente.id} info={cliente} />
+            <TableRow key={cliente.id} {...cliente} />
           ))}
         </tbody>
       </table>
