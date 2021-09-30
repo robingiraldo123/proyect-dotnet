@@ -6,10 +6,10 @@ class EditClientForm extends Component {
 
     this.state = {
       id: props.id,
-      name: "",
-      email: "",
-      phone: "",
-      detalles: "",
+      name: props.name,
+      email: props.email,
+      phone: props.phone_number,
+      detalles: props.description,
     };
 
     this.props = props;
