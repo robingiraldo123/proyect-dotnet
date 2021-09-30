@@ -33,7 +33,7 @@ export class Cliente extends Component {
     );
   }
 
-  static handleTableState = (id, data, root) => {
+  static handleTableState = (data, root) => {
     let clientArray = root.state.clientes;
 
     clientArray.map((el) => {

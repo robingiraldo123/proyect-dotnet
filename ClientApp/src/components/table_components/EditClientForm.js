@@ -4,8 +4,6 @@ class EditClientForm extends Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
-
     this.state = {
       id: props.id,
       name: props.name,
@@ -30,7 +28,7 @@ class EditClientForm extends Component {
 
     this.props.makeRowStatic();
     this.waitData(id, body);
-    this.props.updateTable(0, this.state, this.props.root);
+    this.props.updateTable(this.state, this.props.root);
   };
 
   waitData(id, body) {
