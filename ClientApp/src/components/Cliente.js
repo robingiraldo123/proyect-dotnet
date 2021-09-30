@@ -33,6 +33,23 @@ export class Cliente extends Component {
     );
   }
 
+  static handleTableState = (id, data, root) => {
+    let clientArray = root.state.clientes;
+
+    clientArray.map((el) => {
+      if (el.id === data.id) {
+        el.name = data.name;
+        el.email = data.email;
+        el.phone_number = data.phone_number;
+        el.description = data.description;
+      }
+    });
+
+    root.setState({
+      clientes: clientArray,
+    });
+  };
+
   static renderClient(clientes, self) {
     return (
       <table className="table table-striped" aria-labelledby="tabelLabel">
@@ -48,7 +65,12 @@ export class Cliente extends Component {
         <tbody>
           <NewClientForm />
           {clientes.map((cliente) => (
-            <TableRow key={cliente.id} {...cliente} />
+            <TableRow
+              key={cliente.id}
+              updateTable={this.handleTableState}
+              root={self}
+              {...cliente}
+            />
           ))}
         </tbody>
       </table>

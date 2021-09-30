@@ -18,7 +18,7 @@ class EditClientForm extends Component {
     this.props = props;
   }
 
-  handleSaveAction = (e) => {
+  handleSaveAction = () => {
     this.setState({ loading: true });
     const { id, name, email, phone_number, description } = this.state;
     const body = {
@@ -30,6 +30,7 @@ class EditClientForm extends Component {
 
     this.props.makeRowStatic();
     this.waitData(id, body);
+    this.props.updateTable(0, this.state, this.props.root);
   };
 
   waitData(id, body) {

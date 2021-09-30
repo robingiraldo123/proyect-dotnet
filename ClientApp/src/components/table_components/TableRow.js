@@ -4,7 +4,8 @@ import EditClientForm from "./EditClientForm";
 import { UpdateButton } from "./UpdateButton";
 
 const TableRow = (props) => {
-  const { id, name, email, phone_number, description } = props;
+  const { id, name, email, phone_number, description, updateTable, root } =
+    props;
 
   const [editClientId, setEditClientId] = useState(null);
 
@@ -21,7 +22,12 @@ const TableRow = (props) => {
   return (
     <>
       {editClientId === id ? (
-        <EditClientForm {...props} makeRowStatic={makeRowStatic} />
+        <EditClientForm
+          {...props}
+          makeRowStatic={makeRowStatic}
+          updateTable={updateTable}
+          root={root}
+        />
       ) : (
         <tr id={id} key={"key-" + id} ref={rowRef}>
           <td>{id}</td>
