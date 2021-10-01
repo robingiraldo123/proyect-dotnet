@@ -5,11 +5,15 @@ class NewClientForm extends Component {
     super(props);
 
     this.state = {
+      id: "",
       name: "",
       email: "",
       phone: "",
       detalles: "",
     };
+
+    this.root = props.root;
+    this.updateTable = props.updateTable;
   }
 
   handleSaveAction = (e) => {
@@ -19,8 +23,6 @@ class NewClientForm extends Component {
       phone_number: this.state.phone,
       description: this.state.detalles,
     };
-
-    console.log("click", body);
 
     const requestOptions = {
       method: "POST",
@@ -32,8 +34,13 @@ class NewClientForm extends Component {
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          isLoaded: true,
-          items: result.items,
+          id: result.id,
+        });
+
+        console.log("state", this.state);
+        this.root.state.clientes.push(result);
+        this.root.setState({
+          clientes: this.root.state.clientes,
         });
       });
   };

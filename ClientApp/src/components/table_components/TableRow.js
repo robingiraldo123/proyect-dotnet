@@ -36,15 +36,7 @@ const TableRow = (props) => {
           <td>{phone_number}</td>
           <td>{description}</td>
           <td>
-            <UpdateButton
-              updateid={id}
-              name={name}
-              email={email}
-              phone={phone_number}
-              desc={description}
-              row={rowRef}
-              makeRowEditable={makeRowEditable}
-            />
+            <UpdateButton makeRowEditable={makeRowEditable} />
             <DeleteButton deleteid={id} />
           </td>
         </tr>
