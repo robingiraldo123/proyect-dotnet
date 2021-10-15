@@ -23,10 +23,10 @@ namespace crud_react.Models {
         [Column(TypeName = "nvarchar(100)")]
         public string fecha { get; set; }
   
-        [Column(TypeName = "nvarchar(16)")]
+        [Column(TypeName = "nvarchar(60)")]
         public string email { get; set; }
 
         [Column(TypeName = "nvarchar(16)")]
-        public string IVA { get; set; }
+        public string iva { get; set; }
     }
 }

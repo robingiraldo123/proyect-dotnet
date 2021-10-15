@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NewClientForm from "./table_components/NewClientForm";
 import TableRow from "./table_components/TableRow";
 
+
 export class Cliente extends Component {
   static displayName = Cliente.name;
   constructor(props) {
@@ -12,9 +13,11 @@ export class Cliente extends Component {
     };
   }
 
+
   componentDidMount() {
     this.populateClientData();
   }
+
 
   render() {
     let contents = this.state.loading ? (
@@ -33,6 +36,7 @@ export class Cliente extends Component {
     );
   }
 
+
   static handleTableState = (data, root) => {
     let array = root.state.clientes;
 
@@ -40,12 +44,14 @@ export class Cliente extends Component {
       if (el.id === data.id) {
         Object.assign(el, data);
       }
+      return true;
     });
 
     root.setState({
       clientes: array,
     });
   };
+
 
   static renderClient(clientes, self) {
     return (
@@ -57,6 +63,7 @@ export class Cliente extends Component {
             <th>Email</th>
             <th>Telefono</th>
             <th>Descripción</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -74,9 +81,11 @@ export class Cliente extends Component {
     );
   }
 
+
   async populateClientData() {
     const response = await fetch("api/dbclientes");
     const data = await response.json();
     this.setState({ clientes: data, loading: false });
   }
+
 }

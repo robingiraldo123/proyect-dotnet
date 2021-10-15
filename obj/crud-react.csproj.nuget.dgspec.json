@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/ulises/github/proyect-dotnet/crud-react.csproj": {}
+    "/run/media/ulisesten/SSD2/Development/github/dot_NET/proyect-dotnet/crud-react.csproj": {}
   },
   "projects": {
-    "/home/ulises/github/proyect-dotnet/crud-react.csproj": {
+    "/run/media/ulisesten/SSD2/Development/github/dot_NET/proyect-dotnet/crud-react.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ulises/github/proyect-dotnet/crud-react.csproj",
+        "projectUniqueName": "/run/media/ulisesten/SSD2/Development/github/dot_NET/proyect-dotnet/crud-react.csproj",
         "projectName": "crud-react",
-        "projectPath": "/home/ulises/github/proyect-dotnet/crud-react.csproj",
-        "packagesPath": "/home/ulises/.nuget/packages/",
-        "outputPath": "/home/ulises/github/proyect-dotnet/obj/",
+        "projectPath": "/run/media/ulisesten/SSD2/Development/github/dot_NET/proyect-dotnet/crud-react.csproj",
+        "packagesPath": "/home/ulisesten/.nuget/packages/",
+        "outputPath": "/run/media/ulisesten/SSD2/Development/github/dot_NET/proyect-dotnet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ulises/.nuget/NuGet/NuGet.Config"
+          "/home/ulisesten/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -44,7 +44,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.10, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/5.0.206/RuntimeIdentifierGraph.json"
         }
       }
     }

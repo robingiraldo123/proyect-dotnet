@@ -14,10 +14,10 @@ namespace crud_react.Models {
         [Column(TypeName = "nvarchar(100)")]
         public string name { get; set; }
   
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(16)")]
         public int price { get; set; }
   
-        [Column(TypeName = "nvarchar(16)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string description { get; set; }
   
         [Column(TypeName = "nvarchar(16)")]

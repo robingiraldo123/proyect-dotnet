@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
-import { DeleteButton } from "./DeleteButton";
+import { DeleteButton } from "../DeleteButton";
 import EditClientForm from "./EditClientForm";
-import { UpdateButton } from "./UpdateButton";
 
 const TableRow = (props) => {
   const { id, name, email, phone_number, description, updateTable, root } =
@@ -36,8 +35,10 @@ const TableRow = (props) => {
           <td>{phone_number}</td>
           <td>{description}</td>
           <td>
-            <UpdateButton makeRowEditable={makeRowEditable} />
-            <DeleteButton deleteid={id} />
+            <button onClick={makeRowEditable} className="btn-primary">
+              Editar
+            </button>
+            <DeleteButton deleteid={id} dbcontroller="dbclientes" />
           </td>
         </tr>
       )}

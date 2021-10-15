@@ -8,7 +8,11 @@ export class DeleteButton extends Component {
   }
 
   render() {
-    return <button onClick={this.handleDeleteAction}>Eliminar</button>;
+    return (
+      <button onClick={this.handleDeleteAction} className="btn-delete">
+        Eliminar
+      </button>
+    );
   }
 
   handleDeleteAction = (e) => {
@@ -17,7 +21,10 @@ export class DeleteButton extends Component {
       headers: { "Content-Type": "application/json" },
     };
 
-    fetch("/api/dbclientes/" + this.props.deleteid, requestOptions)
+    fetch(
+      "/api/" + this.props.dbcontroller + "/" + this.props.deleteid,
+      requestOptions
+    )
       .then((response) => {
         return response.json();
       })

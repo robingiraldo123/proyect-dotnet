@@ -11,8 +11,8 @@ export class Home extends Component {
         <ul>
           <li><a href='/clientes'>Clientes</a></li>
           <li><a href='/productos'>Productos</a></li>
-          <li><a href='/#'>Proveedores</a></li>
-          <li><a href='/#'>Facturas</a></li>
+          <li><a href='/proveedores'>Proveedores</a></li>
+          <li><a href='/facturas'>Facturas</a></li>
           <li><a href='/ayuda'>Ayuda</a></li>
             </ul>
 

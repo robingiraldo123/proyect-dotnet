@@ -5,11 +5,10 @@ class NewClientForm extends Component {
     super(props);
 
     this.state = {
-      id: "",
       name: "",
       email: "",
-      phone: "",
-      detalles: "",
+      phone_number: "",
+      description: "",
     };
 
     this.root = props.root;
@@ -17,12 +16,7 @@ class NewClientForm extends Component {
   }
 
   handleSaveAction = (e) => {
-    const body = {
-      name: this.state.name,
-      email: this.state.email,
-      phone_number: this.state.phone,
-      description: this.state.detalles,
-    };
+    const body = this.state; 
 
     const requestOptions = {
       method: "POST",
@@ -33,11 +27,8 @@ class NewClientForm extends Component {
     fetch("/api/dbclientes", requestOptions)
       .then((res) => res.json())
       .then((result) => {
-        this.setState({
-          id: result.id,
-        });
 
-        console.log("state", this.state);
+        /**Esta parte actualiza el estado en la tabla clientes */
         this.root.state.clientes.push(result);
         this.root.setState({
           clientes: this.root.state.clientes,
@@ -59,13 +50,13 @@ class NewClientForm extends Component {
 
   onChangePhone = (e) => {
     this.setState({
-      phone: e.target.value,
+      phone_number: e.target.value,
     });
   };
 
   onChangeDetail = (e) => {
     this.setState({
-      detalles: e.target.value,
+      description: e.target.value,
     });
   };
 
